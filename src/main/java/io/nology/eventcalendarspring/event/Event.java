@@ -9,6 +9,7 @@ import jakarta.persistence.*;
 public class Event {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Long id;
 		
 	@Column
@@ -26,6 +27,14 @@ public class Event {
     @Column
     String label;
     
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getEventName() {
     	return eventName;
     }
@@ -63,6 +72,14 @@ public class Event {
     }
     
     public void setLabel(String label) {
+    	this.label = label;
+    }
+    
+    public Event(String eventName, Date startDate, Date endDate, String location, String label) {
+    	this.eventName = eventName;
+    	this.startDate = startDate;
+    	this.endDate = endDate;
+    	this.location = location;
     	this.label = label;
     }
 }
