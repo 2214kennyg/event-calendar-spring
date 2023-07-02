@@ -17,6 +17,7 @@
 ## Features
 
 -   Adds CRUD functionality to the frontend
+-   Can filter events by label and/or location
 
 ---
 
@@ -31,6 +32,10 @@
 -   ***
 
 ## Change logs
+
+### 02/07/2023
+
+-   Added filtering for label and location
 
 ---
 
