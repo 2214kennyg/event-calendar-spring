@@ -75,6 +75,10 @@ public class Event {
     	this.label = label;
     }
     
+    public Event() {
+    	
+    }
+    
     public Event(String eventName, Date startDate, Date endDate, String location, String label) {
     	this.eventName = eventName;
     	this.startDate = startDate;
