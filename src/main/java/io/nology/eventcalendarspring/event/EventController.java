@@ -53,4 +53,22 @@ public class EventController {
         }
         throw new NotFoundException("Could not find event with id: " + id);
     }
+    
+    @GetMapping("/filterLabel")
+    public ResponseEntity<List<Event>> filterByLabel(@RequestParam("label") String label) {
+        List<Event> filteredEvents = this.service.findByLabel(label);
+        if (filteredEvents.isEmpty()) {
+            throw new NotFoundException("No events found with the specified label");
+        }
+        return new ResponseEntity<List<Event>>(filteredEvents, HttpStatus.OK);
+    }
+    
+    @GetMapping("/filterLocation")
+    public ResponseEntity<List<Event>> filterByLocation(@RequestParam("location") String location) {
+        List<Event> filteredEvents = this.service.findByLocation(location);
+        if (filteredEvents.isEmpty()) {
+            throw new NotFoundException("No events found with the specified location");
+        }
+        return new ResponseEntity<List<Event>>(filteredEvents, HttpStatus.OK);
+    }
 }

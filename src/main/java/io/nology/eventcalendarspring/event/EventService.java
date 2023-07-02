@@ -52,4 +52,12 @@ public class EventService {
 		}
 		return maybeEvent;
 	}
+	
+	public List<Event> findByLabel(String label) {
+		return eventRepository.findByLabel(label);
+    }
+
+    public List<Event> findByLocation(String location) {
+        return eventRepository.findByLocation(location);
+    }
 }
